@@ -1,0 +1,151 @@
+﻿@page "/imageeditor-features1"
+@using System.IO
+@using Azure.Storage.Blobs
+@using Microsoft.AspNetCore.Components.Web
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.ImageEditor
+@rendermode RenderMode.InteractiveServer
+<div class="row">
+	<div hidden="@IsImgEditorHidden">
+		<SfImageEditor @ref="ImageEditor" Toolbar="customToolbarItem" Height="400px">
+		</SfImageEditor>
+	</div>
+	@if (@IsImgEditorHidden)
+	{
+		<div class="text-center mb-2">
+			<img src="https://placehold.co/300x300"
+				 class="img-fluid"
+				 alt="profile image"
+				 style="border-radius:50% !important;">
+		</div>
+	}
+</div>
+<div class="row mt-2 justify-content-center">
+
+	<SfUploader CssClass="custom-uploader" ID="UploadFiles" AllowMultiple="false" AllowedExtensions=".png, .jpg, .jpeg, .pdf">
+		<UploaderEvents ValueChange="OnChange" OnRemove="OnFileRemove"></UploaderEvents>
+	</SfUploader>
+
+</div>
+
+<div class="row">
+	<div class="col-9"></div>
+	<div class="col-3">
+		<SfButton OnClick="@Save" IsPrimary="true" CssClass="mt-2 btn-submit">Next</SfButton>
+	</div>
+</div>
+<style>
+	.btn-submit {
+		border: none;
+		border-radius: 6px !important;
+	}
+	/* To specify font size and color */
+	.e-upload .e-file-select-wrap .e-btn, .e-upload .e-upload-actions .e-btn, .e-bigger.e-small .e-upload .e-file-select-wrap .e-btn, .e-bigger.e-small .e-upload .e-upload-actions .e-btn {
+		background-color: white;
+		color: black;
+		border: 1px solid #54c3db;
+		border-radius: 6px !important;
+	}
+
+	.custom-uploader {
+		border-radius: 25px;
+		height: 200px;
+		width: 400px;
+	}
+</style>
+@code {
+	[Parameter]
+	public string AspectRatio
+	{
+		get => defaultAspectRatio;
+		set
+		{
+			if (defaultAspectRatio != value) { defaultAspectRatio = value; }
+		}
+	}
+
+	[Parameter]
+	public string FileName { get; set; }
+
+	[Parameter]
+	public EventCallback<string> SubmitHandler { get; set; }
+
+	private List<ImageEditorToolbarItemModel> customToolbarItem = new()
+	{
+		// new ImageEditorToolbarItemModel { Name = "Crop" },
+		new ImageEditorToolbarItemModel { Name = "Reset" },
+		new ImageEditorToolbarItemModel { Name = "Confirm" }
+	};
+
+	SfImageEditor ImageEditor;
+
+	string defaultAspectRatio = "Circle";
+	bool IsImgEditorHidden = true;
+	string base64Img = string.Empty;
+	private string uploadBaseUrl = "https://sitoblob.blob.core.windows.net/";
+	private const string CONNECTIONSTRING = "DefaultEndpointsProtocol=https;AccountName=sitoblob;AccountKey=DfjG5fpdqa5OEzKMAiIINL8CkEuNdL4Dm+z3HHq51bJ2GhJkAoCH/x7q1b16PSM5Tpf4NMhwDPue+ASt4iSaeg==;EndpointSuffix=core.windows.net";
+
+	public void OnFileRemove(RemovingEventArgs args)
+	{
+		args.PostRawFile = false;
+		IsImgEditorHidden = true;
+	}
+
+	private async Task OnChange(UploadChangeEventArgs args)
+	{
+		var file = args.Files.FirstOrDefault();
+		if (file is not null)
+		{
+			IsImgEditorHidden = false;
+			using MemoryStream memoryStream = new MemoryStream();
+			await using var fileStream = file.File.OpenReadStream(long.MaxValue);
+			await fileStream.CopyToAsync(memoryStream);
+			byte[] bytes = memoryStream.ToArray();
+			base64Img = "data:image/png;base64," + Convert.ToBase64String(bytes);
+			await ImageEditor.OpenAsync(base64Img);
+			await ImageEditor.SelectAsync(AspectRatio);
+			StateHasChanged();
+		}
+	}
+
+	private async void Save()
+	{
+		await ImageEditor.CropAsync();
+		try
+		{
+			byte[] imageData = await ImageEditor.GetImageDataAsync();
+
+			// Create a memory stream from the edited file
+			using (MemoryStream memoryStream = new MemoryStream(imageData))
+			{
+
+
+				// Save to Azure
+				string containerName = "sito/profileImages";
+
+				var blobServiceClient = new BlobServiceClient(CONNECTIONSTRING);
+				var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+				var blobClient = containerClient.GetBlobClient("profileImages/" + FileName);
+
+				// Upload the MemoryStream to Azure Blob Storage
+				var rslt = blobClient.UploadAsync(memoryStream, true).Result;
+
+				memoryStream.Close();
+
+				var pathToImage = "https://sitoblob.blob.core.windows.net/sito/profileImages/" + FileName;
+
+				// Delete the temporary file
+				//File.Delete(tempFilePath);
+				//await ImageEditor.ExportAsync("Edited Profile", ImageEditorFileType.PNG);
+				await SubmitHandler.InvokeAsync(pathToImage);
+			}
+		}
+		catch (Exception ex)
+		{
+			// alert
+		}
+	}
+}

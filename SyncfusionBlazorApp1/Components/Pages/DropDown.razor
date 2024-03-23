@@ -1,0 +1,90 @@
+﻿@page "/DropDown"
+@using Syncfusion.Blazor.DropDowns
+@rendermode InteractiveServer
+<h3>DropDown</h3>
+<div class="col-lg-12">
+	<div class="col-lg-8 control-section sb-property-border">
+		<div class="control-wrapper">
+			<label class="example-label">Select a game</label>
+			<SfDropDownList TItem="CountryDto" TValue="Guid" PopupHeight="230px" @bind-Value="@DropDownValue" DataSource="@CountryList">
+				<DropDownListEvents TItem="CountryDto" TValue="Guid" ValueChange="OnChange" />
+				<DropDownListFieldSettings Text="Name" Value="ID" />
+			</SfDropDownList>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="property-panel-section">
+			<div class="property-panel-header">Properties</div>
+			<div class="property-panel-content">
+				<div class="property-value">Selected Value : <b>@DropDownValue</b></div>
+				<div class="property-value">Selected Text : <b>@ChangeValue</b></div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<style>
+	.control-section {
+		min-height: 370px;
+	}
+
+	.control-wrapper {
+		max-width: 250px;
+		margin: 0 auto;
+		padding: 50px 0px 0px;
+	}
+
+	.example-label {
+		font-size: 14px;
+		margin-bottom: 6px;
+	}
+
+	.property-panel-section .property-value {
+		padding: 5px 0px 10px;
+		font-size: 14px;
+	}
+
+	.property-panel-content {
+		padding: 0px 0px 15px 0px;
+	}
+
+		.property-panel-content:last-child {
+			padding: 0px 0px 40px 0px;
+		}
+</style>
+
+@code {
+	public class CountryDto
+	{
+		public Guid ID { get; set; }
+		public string Name { get; set; }
+	}
+	private List<CountryDto> CountryList { get; set; }
+	public Guid DropDownValue = default;
+
+	protected override async Task OnInitializedAsync()
+	{
+
+		CountryList = new List<CountryDto>()
+		{
+			new CountryDto() { ID = Guid.NewGuid(), Name = "American Football" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Badminton" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Basketball" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Cricket" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Football" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Golf" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Hockey" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Rugby" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Snooker" },
+			new CountryDto() { ID = Guid.NewGuid(), Name = "Tennis" }
+		};
+		DropDownValue = CountryList[3].ID;
+	}
+	// Set default value to "Game3"
+	public string ChangeValue { get; set; } = "Basketball";
+
+	public void OnChange(Syncfusion.Blazor.DropDowns.ChangeEventArgs<Guid, CountryDto> args)
+	{
+		this.ChangeValue = args.ItemData.Name;
+	}
+}

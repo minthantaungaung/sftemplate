@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SyncfusionBlazorApp1.props" />
+</Project>

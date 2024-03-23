@@ -1,0 +1,97 @@
+﻿@page "/imageeditor-features"
+@rendermode InteractiveServer
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.ImageEditor
+@using Syncfusion.Blazor.Inputs
+@using Azure.Storage.Blobs
+<PageTitle>Image Editor</PageTitle>
+<h2>Image Editor</h2>
+<div>
+	<h3>Selected Features:</h3>
+	<ul class="ulstyle">
+		<li class="list"> Default</li>
+		<li class="list"> Theme - Tailwind CSS</li>
+	</ul>
+</div>
+<br />
+<div id="ControlRegion">
+	<SfImageEditor @ref="ImageEditor" Toolbar="customToolbarItem" Height="500px">
+	</SfImageEditor>
+</div>
+
+<SfButton OnClick="@Save" IsPrimary="true" CssClass="mt-2 btn-submit">Next</SfButton>
+@code {
+	string AspectRatio = "Circle";
+	SfImageEditor ImageEditor;
+	private const string CONNECTIONSTRING = "DefaultEndpointsProtocol=https;AccountName=sitoblob;AccountKey=DfjG5fpdqa5OEzKMAiIINL8CkEuNdL4Dm+z3HHq51bJ2GhJkAoCH/x7q1b16PSM5Tpf4NMhwDPue+ASt4iSaeg==;EndpointSuffix=core.windows.net";
+
+	string base64Img = string.Empty;
+	private List<ImageEditorToolbarItemModel> customToolbarItem = new List<ImageEditorToolbarItemModel>()
+	{
+		// new ImageEditorToolbarItemModel { Name = "Crop" },
+		new ImageEditorToolbarItemModel { Name = "Reset" },
+		new ImageEditorToolbarItemModel { Name = "Confirm" }
+	};
+
+
+	bool IsImgEditorHidden = true;
+
+	public void OnFileRemove(RemovingEventArgs args)
+	{
+		args.PostRawFile = false;
+		IsImgEditorHidden = true;
+	}
+	private async Task OnChange(UploadChangeEventArgs args)
+	{
+		var file = args.Files.FirstOrDefault();
+		if (file is not null)
+		{
+			IsImgEditorHidden = false;
+			using MemoryStream memoryStream = new MemoryStream();
+			using var fileStream = file.File.OpenReadStream(long.MaxValue);
+			await fileStream.CopyToAsync(memoryStream);
+			byte[] bytes = memoryStream.ToArray();
+			base64Img = "data:image/png;base64," + Convert.ToBase64String(bytes);
+			await ImageEditor.OpenAsync(base64Img);
+			await ImageEditor.SelectAsync(AspectRatio);
+			StateHasChanged();
+		}
+	}
+	private async void Save()
+	{
+		await ImageEditor.CropAsync();
+		try
+        {
+            byte[] imageData = await ImageEditor.GetImageDataAsync();
+        
+			// Create a memory stream from the edited file
+			using (MemoryStream memoryStream = new MemoryStream(imageData))
+			{
+
+				// Save to Azure
+				string containerName = "sito/profileImages";
+
+				var blobServiceClient = new BlobServiceClient(CONNECTIONSTRING);
+				var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+				var blobClient = containerClient.GetBlobClient("profileImages/" + $"test-{Guid.NewGuid()}.jpg");
+
+				// Upload the MemoryStream to Azure Blob Storage
+				var rslt = blobClient.UploadAsync(memoryStream, true).Result;
+
+				memoryStream.Close();
+
+				var pathToImage = "https://flo3blobeasia.blob.core.windows.net/sito/profileImages/test.jpg";
+
+				// Delete the temporary file
+				//File.Delete(tempFilePath);
+				//await ImageEditor.ExportAsync("Edited Profile", ImageEditorFileType.PNG);
+				
+			}
+		}
+		catch (Exception ex)
+		{
+			// alert
+		}
+
+	}
+}

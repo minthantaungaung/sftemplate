@@ -1,0 +1,373 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SyncfusionBlazorApp1.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SyncfusionBlazorApp1.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\bootstrap5.css",
+      "PackagePath": "staticwebassets\\bootstrap5.css"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\bootstrap5.scss",
+      "PackagePath": "staticwebassets\\bootstrap5.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\fonts\\syncfusion\\icons.eot",
+      "PackagePath": "staticwebassets\\fonts\\syncfusion\\icons.eot"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\fonts\\syncfusion\\icons.svg",
+      "PackagePath": "staticwebassets\\fonts\\syncfusion\\icons.svg"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\fonts\\syncfusion\\icons.ttf",
+      "PackagePath": "staticwebassets\\fonts\\syncfusion\\icons.ttf"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\fonts\\syncfusion\\icons.woff",
+      "PackagePath": "staticwebassets\\fonts\\syncfusion\\icons.woff"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\images\\ToggleButton.png",
+      "PackagePath": "staticwebassets\\images\\ToggleButton.png"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\base\\base.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\base\\base.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\button.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\button.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\check-box.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\check-box.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\chips.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\chips.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\floating-action-button.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\floating-action-button.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\radio-button.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\radio-button.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\speed-dial.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\speed-dial.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\buttons\\switch.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\buttons\\switch.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\calendars\\calendar.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\calendars\\calendar.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\calendars\\datepicker.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\calendars\\datepicker.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\calendars\\daterangepicker.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\calendars\\daterangepicker.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\calendars\\datetimepicker.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\calendars\\datetimepicker.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\calendars\\timepicker.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\calendars\\timepicker.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\auto-complete.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\auto-complete.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\combo-box.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\combo-box.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\drop-down-base.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\drop-down-base.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\drop-down-list.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\drop-down-list.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\drop-down-tree.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\drop-down-tree.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\list-box.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\list-box.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\mention.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\mention.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\dropdowns\\multi-select.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\dropdowns\\multi-select.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\grids\\excel-filter.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\grids\\excel-filter.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\grids\\grid.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\grids\\grid.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inplace-editor\\inplace-editor.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inplace-editor\\inplace-editor.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\color-picker.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\color-picker.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\input.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\input.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\maskedtextbox.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\maskedtextbox.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\numerictextbox.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\numerictextbox.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\rating.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\rating.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\slider.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\slider.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\textbox.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\textbox.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\inputs\\uploader.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\inputs\\uploader.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\layouts\\card.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\layouts\\card.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\layouts\\splitter.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\layouts\\splitter.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\lists\\list-view.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\lists\\list-view.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\lists\\sortable.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\lists\\sortable.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\accordion.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\accordion.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\appbar.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\appbar.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\breadcrumb.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\carousel.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\carousel.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\context-menu.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\context-menu.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\h-scroll.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\h-scroll.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\menu.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\menu.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\pager.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\pager.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\sidebar.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\sidebar.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\stepper.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\stepper.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\tab.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\tab.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\toolbar.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\toolbar.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\treeview.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\treeview.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\navigations\\v-scroll.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\navigations\\v-scroll.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\notifications\\badge.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\notifications\\badge.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\notifications\\message.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\notifications\\message.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\notifications\\skeleton.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\notifications\\skeleton.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\notifications\\toast.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\notifications\\toast.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\popups\\dialog.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\popups\\dialog.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\popups\\popup.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\popups\\popup.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\popups\\spinner.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\popups\\spinner.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\popups\\tooltip.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\popups\\tooltip.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\schedule\\recurrence-editor.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\schedule\\recurrence-editor.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\schedule\\schedule.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\schedule\\schedule.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\splitbuttons\\button-group.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\splitbuttons\\button-group.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\splitbuttons\\drop-down-button.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\splitbuttons\\drop-down-button.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\splitbuttons\\progress-button.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\splitbuttons\\progress-button.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\individual-scss\\splitbuttons\\split-button.scss",
+      "PackagePath": "staticwebassets\\individual-scss\\splitbuttons\\split-button.scss"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\open-iconic"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\open-iconic"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\settings.json",
+      "PackagePath": "staticwebassets\\settings.json"
+    },
+    {
+      "Id": "D:\\Work\\Flo3\\DemoProjects\\SFTemplate\\SyncfusionBlazorApp1\\SyncfusionBlazorApp1\\wwwroot\\syncfusion-blazor-icons.css",
+      "PackagePath": "staticwebassets\\syncfusion-blazor-icons.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SyncfusionBlazorApp1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SyncfusionBlazorApp1.props",
+      "PackagePath": "build\\SyncfusionBlazorApp1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SyncfusionBlazorApp1.props",
+      "PackagePath": "buildMultiTargeting\\SyncfusionBlazorApp1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SyncfusionBlazorApp1.props",
+      "PackagePath": "buildTransitive\\SyncfusionBlazorApp1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

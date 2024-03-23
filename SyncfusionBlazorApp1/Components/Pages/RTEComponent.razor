@@ -1,0 +1,45 @@
+﻿@page "/rte"
+@using Microsoft.WindowsAzure.Storage
+@using Microsoft.WindowsAzure.Storage.Auth
+@using Microsoft.WindowsAzure.Storage.Blob
+@using Syncfusion.Blazor.RichTextEditor
+@using Azure.Storage.Blobs;
+@using System.IO;
+@rendermode RenderMode.InteractiveServer
+<SfRichTextEditor>
+    <RichTextEditorImageSettings SaveUrl="api/Home/Save" Path="./Images/" />
+</SfRichTextEditor>
+
+<br />
+
+<SfRichTextEditor>
+    <RichTextEditorEvents OnImageUploadSuccess="@BeforeUploadImage" />
+</SfRichTextEditor>
+
+@code {
+    private async Task BeforeUploadImage(ImageSuccessEventArgs args)
+    {
+            //var headers = args.Response.Headers.ToString();
+            const string accountName = "sitodev";
+            const string key = "StZmbVEwJyjQVShmtCLv+lTsz0hqRu/+TQKEAm+aKNHHwX9cP3WrdVu5myJkilN0DkaH0dDZYfid+AStoOIwwA==";
+            //GUID in file name
+            var storageAccount = new CloudStorageAccount(new StorageCredentials(accountName, key), true);
+            //var storageAccount = new CloudStorageAccount(new StorageCredentials(conectionString), true);
+
+            var blobClient = storageAccount.CreateCloudBlobClient();
+            var container = blobClient.GetContainerReference("fileupload"); // Provide your container name
+            await container.CreateIfNotExistsAsync();
+            await container.SetPermissionsAsync(new BlobContainerPermissions()
+            {
+                PublicAccess = BlobContainerPublicAccessType.Blob
+            });
+
+            // var blob = container.GetBlockBlobReference(file.Name);
+            // using (var stream =  args.File.OpenReadStream())
+            // {
+            //     await blob.UploadFromStreamAsync(stream);
+            // }
+            //blobUrl = blob.Uri.ToString();
+        
+    }
+}

@@ -1,0 +1,39 @@
+﻿@page "/test"
+@rendermode InteractiveServer
+@using Syncfusion.Blazor.ImageEditor
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+
+
+
+<div id="target">
+    <div>
+        <button class="e-btn" @onclick="@OnBtnClick">Open</button>
+    </div>
+    <SfDialog Target="#target" Width="300px" ShowCloseIcon="true" @bind-Visible="Visibility" AllowPrerender="true" IsModal="true">
+        <DialogTemplates>
+            <Header> Dialog </Header>
+            <Content>
+                <div id="ControlRegion">
+                    <SfImageEditor Height="500px">
+                    </SfImageEditor>
+                </div>
+            </Content>
+        </DialogTemplates>
+    </SfDialog>
+</div>
+<style>
+    #target {
+        min-height: 400px;
+        height: 100%;
+        width:100%;
+        position: relative;
+    }
+</style>
+@code {
+    private bool Visibility { get; set; } = false;
+    private void OnBtnClick()
+    {
+        this.Visibility = true;
+    }
+}

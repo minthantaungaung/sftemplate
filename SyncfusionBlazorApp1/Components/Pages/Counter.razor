@@ -1,0 +1,162 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+@using Syncfusion.Blazor.DataForm
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Components.Forms
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Calendars
+@using FluentValidation
+@using Blazored.FluentValidation
+
+<SfDataForm ID="MyForm"
+			Model="@PaymentDetailsModel"
+			Width="50%">
+	<FormItems>
+		<FormItem Field="@nameof(PaymentDetailsModel.Name)" LabelText="Full Name on Card"></FormItem>
+		<FormItem Field="@nameof(PaymentDetailsModel.CardNumber)" LabelText="Card Number"></FormItem>
+		<FormItem Field="@nameof(PaymentDetailsModel.ExpirationDate)" LabelText="Expiration Date">
+			<Template>
+				<label class="e-form-label">Expiration Date</label>
+				<SfDatePicker EnableMask="true" Format="MM/yy" @bind-Value="@PaymentDetailsModel.ExpirationDate">
+				</SfDatePicker>
+			</Template>
+		</FormItem>
+		<FormItem Field="@nameof(PaymentDetailsModel.CVV)">
+			<Template>
+				<label class="e-form-label">CVV/CVC</label>
+				<SfMaskedTextBox Mask="000" PromptChar="@PromptCharacter" @bind-Value="@PaymentDetailsModel.CVV"></SfMaskedTextBox>
+			</Template>
+		</FormItem>
+		<FormItem Field="@nameof(PaymentDetailsModel.BillingAddress)" LabelText="Billing Address" EditorType="FormEditorType.TextArea">
+		</FormItem>
+		<FormItem Field="@nameof(PaymentDetailsModel.Accept)" EditorType="FormEditorType.Switch" LabelText="I agree to the terms and conditions"></FormItem>
+	</FormItems>
+
+	<FormButtons>
+		<SfButton IsPrimary="true">Pay</SfButton>
+	</FormButtons>
+
+</SfDataForm>
+
+<SfDataForm ID="MyForm2"
+			Model="@stuInfoModel"
+			Width="50%">
+	<FormItems>
+		<FormGroup ColumnCount="12" ColumnSpacing="10px">
+			<div class="row">
+				<FormItem Field="@nameof(stuInfoModel.FirstName)" ColumnSpan="6" LabelText="FirstName" />
+				<FormItem Field="@nameof(stuInfoModel.LastName)" ColumnSpan="6" LabelText="LastName" />
+				<FormItem Field="@nameof(stuInfoModel.Gender)" ColumnSpan="4" LabelText="Gender" EditorType="FormEditorType.Checkbox" />
+				<FormItem Field="@nameof(stuInfoModel.Email)" ColumnSpan="8" LabelText="Email" />
+				<FormItem Field="@nameof(stuInfoModel.Birthday)" ColumnSpan="4" LabelText="Birthday">
+					<Template>
+						<label class="e-form-label">Birthday <i class="fa-light fa-lock"></i></label>
+						<SfDatePicker EnableMask="true" Format="dd/MM/yyyy" @bind-Value="@stuInfoModel.Birthday" />
+					</Template>
+				</FormItem>
+				<FormItem Field="@nameof(stuInfoModel.Age)" ColumnSpan="2" LabelText="Age" />
+				<FormItem Field="@nameof(stuInfoModel.Nationality)" ColumnSpan="2" LabelText="Nationality" />
+				<FormItem Field="@nameof(stuInfoModel.ID)" ColumnSpan="4" LabelText="HK ID Number">
+					<Template>
+						<label class="e-form-label">HK ID Number <i class="fa-light fa-lock"></i></label>
+						<SfTextBox @bind-Value="@stuInfoModel.ID" />
+					</Template>
+				</FormItem>
+			</div>
+			@* <div class="row"><p>Information in locked status will be private and protected</p></div> *@
+			<div class="row">
+				<FormItem Field="@nameof(stuInfoModel.IsGuardian)" ColumnSpan="12" EditorType="FormEditorType.Checkbox" LabelText="I'm signing up on behalf as a legal guardian" />
+				<FormItem Field="@nameof(stuInfoModel.GuardianFirstName)" ColumnSpan="6" LabelText="Guardian's First Name" />
+			</div>
+
+		</FormGroup>
+	</FormItems>
+
+	<FormButtons>
+		<SfButton>Pay</SfButton>
+	</FormButtons>
+
+</SfDataForm>
+
+@code {
+
+	char PromptCharacter { get; set; } = ' ';
+
+	public class PaymentDetails
+	{
+
+		[Required(ErrorMessage = "Enter Name on the card")]
+		public string Name { get; set; }
+
+		[Required(ErrorMessage = "Enter Billing Address")]
+		public string BillingAddress { get; set; }
+
+		[Required(ErrorMessage = "Enter Card number")]
+		public string CardNumber { get; set; }
+
+		[Required(ErrorMessage = "Enter Count here")]
+		public DateTime? ExpirationDate { get; set; }
+
+		[Required(ErrorMessage = "Enter CVV/CVC")]
+		public string CVV { get; set; }
+
+		[Required(ErrorMessage = "You need to agree to the Terms and Conditions")]
+		[Range(typeof(bool), "true", "true", ErrorMessage = "You need to agree to the Terms and Conditions")]
+		public bool Accept { get; set; }
+	}
+
+	public class StudentBasicInformation
+	{
+		public string? FirstName { get; set; }
+
+		public string? LastName { get; set; }
+
+		[Required(ErrorMessage = "Please choose your Gender.")]
+		public GenderInfo Gender { get; set; }
+
+		[Required(ErrorMessage = "Please enter your Email.")]
+		public string? Email { get; set; }
+
+		[Required(ErrorMessage = "Please pick your Birthday.")]
+		public DateTime Birthday { get; set; }
+
+		[Required(ErrorMessage = "Please pick your Age.")]
+		public int Age { get; set; }
+
+		[Required(ErrorMessage = "Please pick your Nationality.")]
+		public string? Nationality { get; set; }
+
+		[Required(ErrorMessage = "Please pick your Nationality.")]
+		public string? ID { get; set; }
+
+		[Required(ErrorMessage = "You need to agree to the Terms and Conditions")]
+		[Range(typeof(bool), "true", "true", ErrorMessage = "You need to agree to the Terms and Conditions")]
+		public bool IsGuardian { get; set; }
+		public string? GuardianFirstName { get; set; }
+	}
+	public enum GenderInfo
+	{
+		Female,
+		Male,
+		Others
+	}
+	private StudentBasicInformation stuInfoModel = new StudentBasicInformation();
+
+	private PaymentDetails PaymentDetailsModel = new PaymentDetails();
+
+	PaymentDetailsValidator PaymentDetailsValidation = new PaymentDetailsValidator();
+
+	public class PaymentDetailsValidator : AbstractValidator<PaymentDetails>
+	{
+		public PaymentDetailsValidator()
+		{
+			RuleFor(customer => customer.Name).NotEmpty().MinimumLength(3).WithMessage("Name should greater than 3 characters ").MaximumLength(50).WithMessage("Name should not contains more than 50 characters");
+			RuleFor(customer => customer.CardNumber).NotEmpty().WithMessage("Please enter credit card number").CreditCard().WithMessage("Entered number is not a valid credit card number.");
+			RuleFor(customer => customer.ExpirationDate).NotEmpty().WithMessage("Please enter expiration date");
+			RuleFor(customer => customer.CVV).NotEmpty().Length(3);
+			RuleFor(customer => customer.BillingAddress).NotEmpty().WithMessage("Please specify a billing address");
+			RuleFor(customer => customer.Accept).Equal(true).WithMessage("You must accept the terms and conditions to proceed further");
+		}
+	}
+}

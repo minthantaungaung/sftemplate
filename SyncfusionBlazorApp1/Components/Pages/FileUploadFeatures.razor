@@ -1,0 +1,120 @@
+﻿@page "/fileupload-features"
+@rendermode InteractiveServer
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Popups
+
+<PageTitle>File Upload</PageTitle>
+<h2>File Upload</h2>
+<br />
+
+
+<div id="target">
+	<div>
+		<button class="e-btn" @onclick="@OnBtnClick">Open</button>
+	</div>
+	<SfDialog Target="#target" Width="1000" ShowCloseIcon="true" @bind-Visible="Visibility" AllowPrerender="true" IsModal="true">
+		<DialogTemplates>
+			<Header> Edit your profile </Header>
+			<Content>
+				<div class="row mt-2">
+					<div class="col-lg-5">
+						<SfUploader ID="UploadFiles" AllowedExtensions=".png, .jpg, .jpeg, .pdf">
+							<UploaderEvents ValueChange="OnChange" OnRemove="OnFileRemove"></UploaderEvents>
+						</SfUploader>
+						<SfButton OnClick="Save" class="mt-2">Save Profile</SfButton>
+					</div>
+					<div class="col-lg-7">
+						<div hidden="@IsImgEditorHidden">
+							<SfImageEditor @ref="ImageEditor" Toolbar="customToolbarItem" Height="400px">
+							</SfImageEditor>
+						</div>
+						@if (@IsImgEditorHidden)
+						{
+							<div class="border border-1 text-center p-5" style="border-style: dotted !important">
+								Edit your image here!
+							</div>
+						}
+					</div>
+				</div>
+			</Content>
+		</DialogTemplates>
+	</SfDialog>
+</div>
+<style>
+	#target {
+		min-height: 700px;
+		height: 100%;
+	}
+</style>
+@code {
+	private SfUploader uploadObj { get; set; }
+	SfImageEditor ImageEditor = new();
+
+	string base64Img = string.Empty;
+	private List<ImageEditorToolbarItemModel> customToolbarItem = new List<ImageEditorToolbarItemModel>()
+	{
+		// new ImageEditorToolbarItemModel { Name = "Crop" },
+		new ImageEditorToolbarItemModel { Name = "Reset" },
+		new ImageEditorToolbarItemModel { Name = "Confirm" }
+	};
+
+	private bool Visibility { get; set; } = false;
+
+	bool IsImgEditorHidden = true;
+	private void OnBtnClick()
+	{
+		this.Visibility = true;
+	}
+	public void OnFileRemove(RemovingEventArgs args)
+	{
+		args.PostRawFile = false;
+		IsImgEditorHidden = true;
+	}
+	private async Task OnChange(UploadChangeEventArgs args)
+	{
+		var file = args.Files.FirstOrDefault();
+		if (file is not null)
+		{
+			IsImgEditorHidden = false;
+			using MemoryStream memoryStream = new MemoryStream();
+			using var fileStream = file.File.OpenReadStream(long.MaxValue);
+			await fileStream.CopyToAsync(memoryStream);
+			byte[] bytes = memoryStream.ToArray();
+			base64Img = "data:image/png;base64," + Convert.ToBase64String(bytes);
+			await ImageEditor.OpenAsync(base64Img);
+			await ImageEditor.SelectAsync("Circle");
+			StateHasChanged();
+		}
+	}
+	private async void Save()
+	{
+		await ImageEditor.CropAsync();
+		string tempFilePath = Path.GetTempFileName();
+		await ImageEditor.ExportAsync(tempFilePath, ImageEditorFileType.PNG);
+
+		try
+		{
+			// Create a memory stream from the edited file
+			using (FileStream fileStream = File.OpenRead(tempFilePath))
+			using (MemoryStream memoryStream = new MemoryStream())
+			{
+				await fileStream.CopyToAsync(memoryStream);
+				byte[] bytes = memoryStream.ToArray();
+				var editedBase64Img = "data:image/png;base64," + Convert.ToBase64String(bytes);
+
+				// Save to Server
+				// ...
+
+				// Delete the temporary file
+				File.Delete(tempFilePath);
+				await ImageEditor.ExportAsync("Edited Profile", ImageEditorFileType.PNG);
+			}
+		}catch(Exception ex)
+		{
+			
+		}
+		
+	}
+}
